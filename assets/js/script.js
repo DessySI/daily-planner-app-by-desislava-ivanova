@@ -34,25 +34,11 @@ addTextArea.append("<textarea>").addClass('textarea');
 var addSaveButton = $('.save-button');
 addSaveButton.append("<button>").addClass('saveBtn');
 
-
-// $(".row").children().eq(0).addClass('col');
-// $(".row").children().eq(1).addClass('col');
-// $(".row").children().eq(2).addClass('col');
-
-//var divEl = document.getElementById("container");
+//new variable to get the hour
+var hourNow = moment().format("dddd, MMMM DDDo");
 
 
 
-// / TODO: Create a function to handle removing a list item when `.delete-item-btn` is clicked
-// var removeItem = function(event) {
-//   $(event.target).parent().remove();
-// }
 
-// TODO: Use event delegation and add an event listener to `shoppingListEl` to listen for a click event on any element with a class of `.delete-item-btn` and execute the function created above
-// shoppingListEl.on('click', '.delete-item-btn', removeItem);
-
-// rootEl.children('ul').children().css("background-color", "white");
-
-// $('input[type='text']').val('')
 
 
