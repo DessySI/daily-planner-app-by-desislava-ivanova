@@ -4,7 +4,7 @@ Third-Party APIs: Daily Planner App
 
 ## Description
 
-This is HTML, CSS and JavaScript project is created to support employees with busy schedules during their working hours, on daily bases and improve their time efficiency.
+This HTML, CSS and JavaScript project is created to support employees with busy schedules during their working hours, on daily bases and improve their time efficiency.
 
 ## Installation
 
