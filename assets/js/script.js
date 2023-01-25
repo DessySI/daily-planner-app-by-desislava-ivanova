@@ -16,43 +16,50 @@ for (var i=0; i<9; i++){
 //append coluns to row
 var newButton=$('<button>');
 var newTextArea=$('<textarea>');
+
 newDiv.clone().appendTo('.row').addClass('col-1 hour');
 //add textarea to every second column
-newTextArea.clone().appendTo('.row').addClass('col-10 text-area');
+
+newTextArea.clone().appendTo('.row').addClass('col-10 text-area description');
 //add save button to every third column
 newButton.clone().appendTo('.row').addClass('col-1 fas fa-save saveBtn');
 
 //add hour to every first column
+var idArr = [9, 10, 11, 12, 13, 14, 15, 16, 17];
+
 for (i = 0; i < hoursArr.length; i++) {
-        $('.hour').eq(i).append('<p>' + hoursArr[i] + '</p>').attr('id', hoursArr[i]);
+        $('.hour').eq(i).append('<p>' + hoursArr[i] + '</p>').attr('id', idArr[i]);
 }
+
 $(".saveBtn").on("click", function () {
 // localstorage to store time and text
 var eventText = $(this).siblings(".text-area").val();
 var timeEl = $(this).siblings(".hour").attr("id");
 localStorage.setItem(timeEl, eventText);
-eventText.val(localStorage.getItem(timeEl));
 });
+$('.hour').siblings(".text-area").val(localStorage.getItem(idArr[i]))
 
-//not completed
-function armagedon(){
+//new function to compare event time and current time
+function timeCheck(){
 $('.time-block').each(function () {
   //variable to get current hour
-  var hourNow = moment().format("h");
-  var hourIndex = parseInt($(this).children().eq(0).attr("id"));
-  if(+hourNow < hourIndex){
-   $(this).addClass('.future');
+  var hourNow = moment().format("k");
+  var hourIndex = parseInt($(this).children().attr("id"));
+  if(+hourIndex < hourNow){
+   $(this).addClass('past');
   };
-  if(+hourNow == hourIndex){
-    $(this).addClass('.present');
-  }else{
-    $(this).addClass('.past');
+  if(+hourIndex == hourNow){
+    $(this).addClass('present');
+  }if(+hourIndex > hourNow){
+    $(this).addClass('future');
+  }if(hourNow.change){
+    $(document).ready.function()
   }
-  console.log(+hourNow, hourIndex);
+  console.log(hourNow, +hourIndex);
 });
 }
-armagedon();
-});
+timeCheck();
+})
 
 
 
